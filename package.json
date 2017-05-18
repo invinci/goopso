@@ -1,0 +1,46 @@
+{
+  "name": "Project",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "base-64": "^0.1.0",
+    "jsonwebtoken": "^7.2.1",
+    "jwt-decode": "^2.1.0",
+    "lodash": "^4.17.4",
+    "moment": "^2.17.1",
+    "query-string": "^4.3.1",
+    "querystring": "^0.2.0",
+    "react": "15.4.1",
+    "react-native": "0.39.2",
+    "react-native-camera": "git+https://github.com/lwansbrough/react-native-camera.git",
+    "react-native-camera-kit": "^4.0.6",
+    "react-native-camera-roll-picker": "^1.1.9",
+    "react-native-country-code-telephone-input": "0.0.9",
+    "react-native-elements": "^0.11.2",
+    "react-native-fabric-digits": "github:jeanlebrument/react-native-fabric-digits",
+    "react-native-gifted-chat": "^0.1.4",
+    "react-native-image-picker": "^0.26.3",
+    "react-native-imagepicker": "^1.0.0",
+    "react-native-loading-spinner-overlay": "^0.4.1",
+    "react-native-nav": "^1.2.0",
+    "react-native-navbar": "^1.6.0",
+    "react-native-root-toast": "^1.0.3",
+    "react-native-scrollable-tab-view": "^0.7.2",
+    "react-native-unified-contacts": "^1.1.0",
+    "react-native-vector-icons": "^4.1.0",
+    "react-native-indexed-listview": "git+https://github.com/remobile/react-native-indexed-listview.git"
+  },
+  "devDependencies": {
+    "babel-jest": "18.0.0",
+    "babel-preset-react-native": "1.9.1",
+    "jest": "18.1.0",
+    "react-test-renderer": "15.4.1"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
