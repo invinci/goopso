@@ -11,10 +11,10 @@ import {
 } from 'react-native';
 import NavigationBar from 'react-native-navbar';
 
-let logo = require('image!logo'),
-    Screen = require('Dimensions').get('window'),
-    {height, width} = Dimensions.get('window'),
-    back_icon = require('image!back_icon');
+//let logo = require('image!logo'),
+ let   Screen = require('Dimensions').get('window'),
+    {height, width} = Dimensions.get('window');
+    //back_icon = require('image!back_icon');
     //NavigationBar = require('react-native-navbar');
 
 class EditEmail extends Component {

@@ -8,10 +8,11 @@ import {
   TouchableOpacity,
   View,
   ListView,
-  PropTypes
+  PropTypes,
+  DatePickerIOS,
 } from 'react-native';
 import NavigationBar from 'react-native-navbar';
-
+var CustomActionSheet = require('react-native-custom-action-sheet');
 var Dimensions    = require('Dimensions'),
     windowSize    = Dimensions.get('window'),
     Screen        = require('Dimensions').get('window'),
@@ -125,6 +126,14 @@ class LocateMap extends Component {
           dataSource={this.state.dataSource}
           renderRow={this.renderData.bind(this)}
         />
+
+        <View>
+        <CustomActionSheet modalVisible={this.state.modalVisible} onCancel={this.toggleModal}>
+          <View style={styles.datePickerContainer}>
+            <Text>dhsfkjdfjsdhfjks</Text>
+          </View>
+        </CustomActionSheet>
+      </View>
       </View>
     );
   }
