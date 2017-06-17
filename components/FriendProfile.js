@@ -11,12 +11,12 @@ import {
 import NavigationBar from 'react-native-navbar';
 
 let Screen = require('Dimensions').get('window'),
-    {height, width} = Dimensions.get('window'),
-    back_icon = require('image!back'),
-    demoImg = require('image!demoImg'),
-    tick_icon = require('image!tick_icon'),
-    phone = require('image!phone'),
-    send_text = require('image!send_text');
+    {height, width} = Dimensions.get('window');
+   // back_icon = require('image!back'),
+    //demoImg = require('image!demoImg'),
+    //tick_icon = require('image!tick_icon'),
+    //phone = require('image!phone'),
+    //send_text = require('image!send_text');
     //NavigationBar = require('react-native-navbar');
 let lat = 0, lng = 0;
 class FriendProfile extends Component {
@@ -34,12 +34,12 @@ class FriendProfile extends Component {
         <NavigationBar
           leftButton= {
             <TouchableOpacity onPress={()=>this.props.navigator.pop()}>
-              <Image source={back_icon} style={{top:20,left:6}}/>
+              <Image source={{ uri :'back_icon'}} style={{top:20,left:6}}/>
             </TouchableOpacity>}
           style = {{borderBottomWidth:1, borderBottomColor:'rgba(0,0,0,.1)', height:(Screen.height/100)*10}} />
         <View style={styles.container}>
           <TouchableOpacity style={{justifyContent:'center' ,marginVertical:20,alignItems:'center'}}>
-            <Image source={demoImg} style={{height:150,width:150,borderRadius:75}}/>
+            <Image source={{uri: 'demoImg'}} style={{height:150,width:150,borderRadius:75}}/>
           </TouchableOpacity>
           <Text style={{textAlign:'center', fontSize:22, fontWeight:'700',fontFamily:'din round pro'}}>Vera Lair</Text>
           <Text style={{marginTop:10,textAlign:'center', color:'#b7b7b7',fontWeight:'600',fontSize:16,fontFamily:'din round pro'}}>Is off the grid</Text>
@@ -66,12 +66,12 @@ class FriendProfile extends Component {
           </View>
           <View style={{borderTopWidth:1,borderBottomWidth:1,borderColor:'rgba(0,0,0,.1)',padding:20,marginVertical:20}}>
             <View style={{flexDirection:'row'}}>
-              <Image source={phone} style={{height:20,width:20}}/>
+              <Image source={{uri :'phone'}} style={{height:20,width:20}}/>
               <Text style={{fontWeight:'700',left:15,fontFamily:'din round pro'}}>CALL VERA</Text>
             </View>
           </View>
           <TouchableOpacity style={{flexDirection:'row',paddingLeft:20}} onPress={()=>this.props.navigator.push({component:require('./Chat')})}>
-            <Image source={send_text} style={{height:20,width:20}}/>
+            <Image source={{uri : 'send_text'}} style={{height:20,width:20}}/>
             <Text style={{fontWeight:'700',left:15,fontFamily:'din round pro'}}>SEND A TEXT</Text>
           </TouchableOpacity>
         </View>

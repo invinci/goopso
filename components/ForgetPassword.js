@@ -12,7 +12,7 @@ import NavigationBar from 'react-native-navbar';
 
 let Screen = require('Dimensions').get('window'),
     {height, width} = Dimensions.get('window'),
-    back_icon = require('image!back_icon');
+   // back_icon = require('image!back_icon');
    // NavigationBar = require('react-native-navbar');
 
 class ForgetPassword extends Component {
@@ -35,7 +35,7 @@ class ForgetPassword extends Component {
         <NavigationBar
             leftButton= {
               <TouchableOpacity  onPress={() => context.props.navigator.pop()}>
-                <Image source={back_icon} style={{top:12,left:6}}/>
+                <Image source={{uri :'back_icon'}} style={{top:12,left:6}}/>
               </TouchableOpacity>}
             style = {{backgroundColor:'#5a0fb4'}} />
         <View style={styles.container}>

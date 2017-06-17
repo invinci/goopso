@@ -12,8 +12,7 @@ import RestService from '../../utilities/RestService';
 import NavigationBar from 'react-native-navbar';
 
 let Screen = require('Dimensions').get('window'),
-    {height, width} = Dimensions.get('window'),
-    back_icon = require('image!back_icon');
+    {height, width} = Dimensions.get('window');
    // NavigationBar = require('react-native-navbar');
 
 class EnterUsername extends Component {
@@ -56,7 +55,7 @@ class EnterUsername extends Component {
         <NavigationBar
             leftButton= {
               <TouchableOpacity  onPress={() => context.props.navigator.pop()}>
-                <Image source={back_icon} style={{top:12,left:6}}/>
+                <Image source={{uri :'back_icon'}} style={{top:12,left:6}}/>
               </TouchableOpacity>}
             style = {{backgroundColor:'#5a0fb4'}} />
         <View style={styles.container}>

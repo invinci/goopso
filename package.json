@@ -29,6 +29,7 @@
     "react-native-indexed-listview": "git+https://github.com/remobile/react-native-indexed-listview.git",
     "react-native-interactable": "0.0.9",
     "react-native-loading-spinner-overlay": "^0.4.1",
+    "react-native-maps": "^0.15.2",
     "react-native-nav": "^1.2.0",
     "react-native-navbar": "^1.6.0",
     "react-native-root-toast": "^1.0.3",

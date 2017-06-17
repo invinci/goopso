@@ -12,7 +12,7 @@ import NavigationBar from 'react-native-navbar';
 import CustomView from './CustomView';
 import CustomActions from './CustomActions';
 let context;
-let back_icon = require('image!back');
+//let back_icon = require('image!back');
     //NavigationBar = require('react-native-navbar');
 class Chat extends Component {
   constructor(props) {
@@ -212,7 +212,7 @@ class Chat extends Component {
           }
           leftButton= {
             <TouchableOpacity style={{justifyContent:'center'}} onPress={()=>this.props.navigator.pop()}>
-              <Image source={back_icon} style={{}}/>
+              <Image source={{ uri: 'back'}} style={{}}/>
             </TouchableOpacity>}
           style = {{borderBottomWidth:1, borderBottomColor:'rgba(0,0,0,.1)',padding:20}} />
       <GiftedChat

@@ -18,13 +18,13 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import { List, ListItem } from 'react-native-elements'
 
 let Screen = require('Dimensions').get('window'),
-    {height, width} = Dimensions.get('window'),
-    back_icon = require('image!back'),
-    demoImg = require('image!demoImg'),
-    userIcon = require('image!user-icon'),
-    plusIcon = require('image!plus-icon'),
-    tick_icon = require('image!tick_icon'),
-    shareIcon = require('image!location_icon');
+    {height, width} = Dimensions.get('window');
+    //back_icon = require('image!back'),
+    //demoImg = require('image!demoImg'),
+    //userIcon = require('image!user-icon'),
+    //plusIcon = require('image!plus-icon'),
+   // tick_icon = require('image!tick_icon'),
+    //shareIcon = require('image!location_icon');
    // NavigationBar = require('react-native-navbar');
 
    const list = [
@@ -82,7 +82,7 @@ class Notifications extends Component {
           title={<Text style={{fontWeight:'700',fontFamily:'din round pro',fontSize:16}}>NOTIFICATIONS</Text>}
           leftButton= {
             <TouchableOpacity style={{justifyContent:'center'}} onPress={()=>this.props.navigator.pop()}>
-              <Image source={back_icon} style={{}}/>
+              <Image source={{uri :'back'}} style={{}}/>
             </TouchableOpacity>}
           style = {{borderBottomWidth:1, borderBottomColor:'rgba(0,0,0,.1)'}} />
         <ScrollView  showsHorizontalScrollIndicator={false} showsVerticalScrollIndicator={false}>

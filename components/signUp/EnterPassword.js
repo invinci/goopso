@@ -14,8 +14,7 @@ import Toast from 'react-native-root-toast';
 import NavigationBar from 'react-native-navbar';
 
 let Screen = require('Dimensions').get('window'),
-    {height, width} = Dimensions.get('window'),
-    back_icon = require('image!back_icon');
+    {height, width} = Dimensions.get('window');
     //NavigationBar = require('react-native-navbar');
 
 const Digits = require('react-native-fabric-digits');
@@ -216,7 +215,7 @@ class EnterPassword extends Component {
         <NavigationBar
             leftButton= {
               <TouchableOpacity  onPress={() => context.props.navigator.pop()}>
-                <Image source={back_icon} style={{top:12,left:6}}/>
+                <Image source={{ uri: 'back_icon'}} style={{top:12,left:6}}/>
               </TouchableOpacity>}
             style = {{backgroundColor:'#5a0fb4'}} />
         <View style={styles.container}>

@@ -10,11 +10,8 @@ import {
 } from 'react-native';
 import NavigationBar from 'react-native-navbar';
 
-let logo = require('image!logo'),
-    Screen = require('Dimensions').get('window'),
-    {height, width} = Dimensions.get('window'),
-    back_icon = require('image!back_icon');
-    //NavigationBar = require('react-native-navbar');
+let Screen = require('Dimensions').get('window'),
+    {height, width} = Dimensions.get('window');
 
 class EnterFnameLname extends Component {
   constructor(props){
@@ -52,7 +49,7 @@ class EnterFnameLname extends Component {
         <NavigationBar
             leftButton= {
               <TouchableOpacity  onPress={() => context.props.navigator.pop()}>
-                <Image source={back_icon} style={{top:12,left:6}}/>
+                <Image source={{uri: 'back_icon'}} style={{top:12,left:6}}/>
               </TouchableOpacity>}
             style = {{backgroundColor:'#5a0fb4'}} />
         <View style={styles.container}>

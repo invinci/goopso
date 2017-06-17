@@ -12,9 +12,7 @@ import NavigationBar from 'react-native-navbar';
 import Spinner from 'react-native-loading-spinner-overlay';
 var Contacts  = require('react-native-unified-contacts');
 
-let search        = require('image!search-icon'),
-	demoImg       = require('image!demoImg'),
-	Dimensions    = require('Dimensions'),
+let Dimensions    = require('Dimensions'),
     windowSize    = Dimensions.get('window'),
     Screen        = require('Dimensions').get('window');
 
@@ -62,7 +60,7 @@ class AddContact extends Component {
 			<View style={{flexDirection:'row',borderBottomWidth:1,borderBottomColor:'#E0E0E0',marginHorizontal:20}}>
 				<View style={{flex:2,marginVertical:10}}>
 					<View style={{flexDirection:'row'}}>
-						<Image source={demoImg} style={{height:40,width:40,borderRadius:20}} />
+						<Image source={{uri:'demoImg'}} style={{height:40,width:40,borderRadius:20}} />
 						<Text style={{padding:12,fontWeight:'600',fontFamily:'din round pro'}}>{data.givenName}</Text>
 					</View>
 				</View>
@@ -82,7 +80,7 @@ class AddContact extends Component {
       		rightButton={<TouchableOpacity onPress={()=>this.props.navigator.pop()} style={{justifyContent:'center',right:30}}><Text style={{fontWeight:'700',color:'#5a0fb4',fontFamily:'din round pro',fontSize:16}}>DONE</Text></TouchableOpacity>}
       		/>
   			<View style={{flexDirection:'row',alignItems:'center',justifyContent:'center',backgroundColor:'#EEEEEE',marginHorizontal:20}}>
-  				<Image source={search} style={{height:20,width:20}} resizeMode='contain'/>
+  				<Image source={{uri: 'search-icon'}} style={{height:20,width:20}} resizeMode='contain'/>
   				<TextInput
 	  				style={{height:40,width:(Screen.width/100)*83.5}} 
 	  				onChangeText={(searchInput)=>{this.setState({searchInput})}}

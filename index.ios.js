@@ -79,7 +79,8 @@ export default class Project extends Component {
       return LocateMap;
       //return UserProfile;
     else
-      return StartPage;
+      return LocateMap;
+      //return StartPage;
       //return UserProfile;
 
   }
