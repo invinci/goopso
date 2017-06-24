@@ -12,8 +12,8 @@ var ScrollableTabView = require('react-native-scrollable-tab-view');
 
 let Screen = require('Dimensions').get('window'),
     {height, width} = Dimensions.get('window'),
-    //back_icon = require('image!back'),
-    Followers = require('./Followers'),
+    //back_icon = require('back'),
+    Followers = require('./FollowersShareTo'),
     Direct    = require('./Direct');
 class ShareTo extends Component {
 
@@ -24,15 +24,17 @@ class ShareTo extends Component {
           title={<Text style={{fontFamily:'din round pro', fontWeight:'800', fontSize:18}}>SHARE TO</Text>}
           leftButton = {
             <TouchableOpacity onPress={()=>this.props.navigator.pop()} style={{justifyContent:'center'}}>
-              <Image source={{uri: 'back_icon'}} style={{left:6}}/>
+              <Image source={{uri: 'back'}} style={{height:20,width:20,right:10,resizeMode:"contain", left: 6}}/>
             </TouchableOpacity>
           } />
         <ScrollableTabView 
           tabBarTextStyle={{fontFamily:'din round pro',color:'#5a0fb4',fontWeight:'700'}}
           tabBarInactiveTextColor="gray"
           tabBarUnderlineStyle={{borderBottomColor:'#5a0fb4'}}
-          style={{marginHorizontal:(Screen.width/100)*10}}>
+          //style={{marginHorizontal:(Screen.width/100)*10}}
+          >
           <Followers tabLabel="FOLLOWERS" />
+          {/*<View style={{flex: 1, backgroundColor: 'red'}}></View>*/}
           <Direct tabLabel="DIRECT" />
         </ScrollableTabView>
       </View>

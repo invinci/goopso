@@ -11,10 +11,10 @@ import {
   AsyncStorage
 } from 'react-native';
 
-let UserProfile = require ('./components/EditPassword'),
+let UserProfile = require ('./components/UpdateProfile/EditPassword'),
     StartPage = require ('./components/StartPage'),
     Loader = require ('./components/Loader'),
-    Chat = require ('./components/Chat'),
+    Chat = require ('./components/shareTo'),
     Followers = require ('./components/Notifications'),
     LocateMap = require('./components/LocateMap');
 
@@ -79,7 +79,7 @@ export default class Project extends Component {
       return LocateMap;
       //return UserProfile;
     else
-      return LocateMap;
+      return LocateMap  ;
       //return StartPage;
       //return UserProfile;
 

@@ -16,6 +16,8 @@ import NavigationBar from 'react-native-navbar';
 import Interactable from 'react-native-interactable';
 import MapView from 'react-native-maps';
 import flagPinkImg from '../img/flag-pink.png';
+import ActionButton from 'react-native-action-button';
+import Icon from 'react-native-vector-icons/Ionicons';
 const Screen = {
   width: Dimensions.get('window').width,
   height: Dimensions.get('window').height - 75
@@ -112,7 +114,7 @@ class LocateMap extends React.Component {
         <NavigationBar
           leftButton= {
             <TouchableOpacity style={{justifyContent:'center'}}>
-              <Image source={{uri :'<goopso></goopso>'}} style={{height:20,width:120,left:10,resizeMode:"contain"}}/>
+              <Image source={{uri :'goopso'}} style={{height:20,width:120,left:10,resizeMode:"contain"}}/>
             </TouchableOpacity>}
           rightButton={
             <View style={{flexDirection:'row'}}>
@@ -129,7 +131,7 @@ class LocateMap extends React.Component {
           provider={this.props.provider}
           style={styles.map}
           initialRegion={this.state.region}
-          onPress={this.onMapPress}
+          //onPress={this.onMapPress}
         >
           {this.state.markers.map(marker=>(
         <MapView.Marker coordinate={marker.coordinate} key={marker.id}>
@@ -152,9 +154,9 @@ class LocateMap extends React.Component {
           }} />
           <Interactable.View
             verticalOnly={true}
-            snapPoints={[{y: 40},{y: Screen.height-300}, {y: Screen.height-100}]}
+            snapPoints={[{y: 40},{y: Screen.height-300}, {y: Screen.height-5}]}
             boundaries={{top: -300}}
-            initialPosition={{y: Screen.height-100}}
+            initialPosition={{y: Screen.height-5}}
             animatedValueY={this._deltaY}
             onSnap={(event)=> this.onSnap(event)}
           //onDrag={()=> alert("OnDrag")}
@@ -163,6 +165,12 @@ class LocateMap extends React.Component {
               <View style={styles.panelHeader}>
                 <View style={styles.panelHandle} />
               </View>
+            <View style={{height: 300, position: 'absolute', right: 80, bottom: 150, zIndex: 9999}}>
+              <ActionButton
+                buttonColor="rgba(231,76,60,1)"
+                onPress={()=>this.props.navigator.push({component:require('./shareTo')})}
+              />
+             </View>
               <ListView
                   dataSource={this.state.dataSource}
                   renderRow={this.renderData.bind(this)}
@@ -268,6 +276,11 @@ const styles = StyleSheet.create({
     width: Screen.width-40,
     height: 225,
     marginTop: 30
+  },
+  actionButtonIcon: {
+    fontSize: 20,
+    height: 22,
+    color: 'white',
   },
 });
 

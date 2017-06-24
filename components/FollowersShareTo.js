@@ -16,6 +16,7 @@ import ImagePicker from 'react-native-image-picker';
 import NavigationBar from 'react-native-navbar';
 import Icon from 'react-native-vector-icons/FontAwesome';
 var imagePicker = require('react-native-imagepicker');
+import { Button } from 'react-native-elements'
 
 let Screen = require('Dimensions').get('window'),
     {height, width} = Dimensions.get('window');
@@ -26,13 +27,13 @@ let Screen = require('Dimensions').get('window'),
     //tick_icon = require('image!tick_icon'),
    // shareIcon = require('image!location_icon');
    // NavigationBar = require('react-native-navbar');
-class UserProfile extends Component {
+class FollowersShareTo extends Component {
   constructor(props){
     super(props);
     this.state={
       username:'',
       imageSource: 'https://facebook.github.io/react/img/logo_og.png',
-      sharing:false    }
+      sharing:false, text: '',    }
   }
 
   async getUserData() {
@@ -149,53 +150,30 @@ class UserProfile extends Component {
     console.log("dddd", context)
     return (
       <View style={{flex:1}}>
-        <NavigationBar
-          title={<Text style={{fontWeight:'700',fontFamily:'din round pro',fontSize:16}}>PROFILE</Text>}
-          leftButton= {
-            <TouchableOpacity style={{justifyContent:'center'}} onPress={()=>this.props.navigator.pop()}>
-              <Image source={{uri: 'back'}} style={{height:20,width:20,right:10,resizeMode:"contain", left: 6}}/>
-            </TouchableOpacity>}
-          style = {{borderBottomWidth:1, borderBottomColor:'rgba(0,0,0,.1)'}} />
-        <ScrollView  showsHorizontalScrollIndicator={false} showsVerticalScrollIndicator={false}>
-          <View style={styles.container}>
-            <TouchableOpacity onPress={()=>this.selectPhotoTapped()} style={{justifyContent:'center' ,marginVertical:20,alignItems:'center'}}>
-                 <Image key={context.state.imageSource} source={{uri: context.state.imageSource }} style={{height:100,width:100,borderRadius:50}}/>
-            </TouchableOpacity >
-            <Text style={{textAlign:'center', fontSize:22, fontWeight:'700',fontFamily:'din round pro'}}>{context.state.userData ? context.state.userData.firstname + ' ' + context.state.userData.lastname: 'dsefesf'}</Text>
-            <Text style={{marginTop:10,textAlign:'center', color:'#b7b7b7',fontWeight:'600',fontSize:16,fontFamily:'din round pro',marginBottom:20}}>you need to share your location to see what your friends are up to</Text>
-            
-            <View style={[styles.options,{marginBottom: 20}]}>
+        {/*<ScrollView  showsHorizontalScrollIndicator={false} showsVerticalScrollIndicator={false}>*/}
+        <View style={{flex:1, flexDirection: 'column'}}>
+          <View style={[styles.container]}>
+            <View style={[styles.options]}>
               <View style={{flexDirection:'row'}}>
-                <View style={{flex:1}}>
-                  <Icon name="map-marker" size={20} color="#adabab" />
-                </View>
-                <View style={{flex:5,alignItems:'flex-start'}}>
-                  <Text style={{fontWeight:'700',fontFamily:'din round pro'}}>SHARE MY LOCATION</Text>
-                </View>
+                <Image
+                  style={{width: 60, height: 80}}
+                  source={{uri: 'https://facebook.github.io/react/img/logo_og.png'}}
+                />
                 <View style={{flex:1, height: 10}}>
-                  <Switch
-                    onValueChange={(value) => this.setState({sharing: value})}
-                    onTintColor="#5a0fb4"
-                    style={{}}
-                    value={this.state.sharing} />
+                  <TextInput
+                      style={{height: 80, borderColor: 'white', borderWidth: 1, marginLeft: 10}}
+                      onChangeText={(text) => this.setState({text})}
+                      value={this.state.text}
+                      editable = {true}
+                      maxLength = {40}
+                      multiline
+                      placeholder={'Write a caption'}
+                      placeholderTextColor={'grey'}
+                    />
                 </View>
               </View>
 
             </View>
-
-            <TouchableOpacity onPress={()=>this.props.navigator.push({component:require('./Account')})} style={styles.options}>
-              <View style={{flexDirection:'row'}}>
-                <View style={{flex:1}}>
-                  <Icon name="cog" size={20} color="#adabab" />
-                  
-                </View>
-                <View style={{flex:5,alignItems:'flex-start'}}>
-                  <Text style={{fontWeight:'700',fontFamily:'din round pro'}}>ACCOUNT</Text>
-                </View>
-                
-              </View>
-
-            </TouchableOpacity>
 
             <TouchableOpacity onPress={()=>this.props.navigator.push({component:require('./FriendsList')})} style={styles.options}>
               <View style={{flexDirection:'row'}}>
@@ -204,7 +182,7 @@ class UserProfile extends Component {
                   
                 </View>
                 <View style={{flex:5,alignItems:'flex-start'}}>
-                  <Text style={{fontWeight:'700',fontFamily:'din round pro'}}>FRIENDS</Text>
+                  <Text style={{fontWeight:'700',fontFamily:'din round pro'}}>TAG PEOPLE</Text>
                 </View>
                 
               </View>
@@ -214,11 +192,10 @@ class UserProfile extends Component {
             <TouchableOpacity onPress={()=>this.props.navigator.push({component:require('./Notifications')})} style={styles.options}>
               <View style={{flexDirection:'row'}}>
                 <View style={{flex:1}}>
-                   <Icon name="bell" size={20} color="#adabab" />
-                  
+                  <Icon name="map-marker" size={20} color="#adabab" />
                 </View>
                 <View style={{flex:5,alignItems:'flex-start'}}>
-                  <Text style={{fontWeight:'700',fontFamily:'din round pro'}}>NOTIFICATIONS</Text>
+                  <Text style={{fontWeight:'700',fontFamily:'din round pro'}}>ADD LOCATION</Text>
                 </View>
                 
               </View>
@@ -238,64 +215,17 @@ class UserProfile extends Component {
               </View>
 
             </TouchableOpacity>
-
-             <TouchableOpacity onPress={()=>this.props.navigator.push({component:require('./About&Help')})} style={styles.options}>
-              <View style={{flexDirection:'row'}}>
-                <View style={{flex:1}}>
-                <Icon name="question-circle" size={20} color="#adabab"  />
-                  
-                </View>
-                <View style={{flex:5,alignItems:'flex-start'}}>
-                  <Text style={{fontWeight:'700',fontFamily:'din round pro'}}>ABOUT & HELP</Text>
-                </View>
-                
-              </View>
-
-            </TouchableOpacity>
-
-             <TouchableOpacity onPress={()=>this.props.navigator.push({component:require('./StartPage')})} style={[styles.options,{marginTop : 20, marginBottom: 20}]}>
-              <View style={{flexDirection:'row'}}>
-                <View style={{flex:1}}>
-                <Icon name="power-off" size={20} color="red"  />
-                  
-                </View>
-                <View style={{flex:5,alignItems:'flex-start'}}>
-                  <Text style={{fontWeight:'700',fontFamily:'din round pro', color:'red'}}>LOGOUT</Text>
-                </View>
-                
-              </View>
-
-            </TouchableOpacity>
-{/*
-            <View style={styles.options}>
-              <View style={{flexDirection:'row'}}>
-                <View style={{flex:1}}>
-                  <Image source={plusIcon} style={{height:20,width:20,right:3,resizeMode:"contain"}}/>
-                  
-                </View>
-                <View style={{flex:5,alignItems:'flex-start'}}>
-                  <Text style={{fontWeight:'700',fontFamily:'din round pro'}}>Added me</Text>
-                </View>
-              
-              </View>
-
-            </View>
-
-            <View style={styles.options}>
-              <TouchableOpacity onPress={()=>this.props.navigator.push({component:require('./Chat')})} style={{flexDirection:'row'}}>
-                <View style={{flex:1}}>
-                  <Image source={shareIcon}/>
-                </View>
-                <View style={{flex:5,alignItems:'flex-start'}}>
-                  <Text style={{fontWeight:'700',fontFamily:'din round pro'}}>Messages</Text>
-                </View>
-                
-              </TouchableOpacity>
-
-            </View>*/}
-          
           </View>
-        </ScrollView>
+           <View style={{flex: 0.2, padding: 20}}>
+              <Button
+                raised
+                //icon={{name: 'cached'}}
+                fontWeight={'bold'}
+                buttonStyle={{backgroundColor: '#5a0fb4'}}
+                title='SHARE' />
+           </View>
+          </View>
+        {/*</ScrollView>*/}
       </View>
        
     );
@@ -304,8 +234,9 @@ class UserProfile extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#dbd9d9',
+    flex: 0.8,
+    //backgroundColor: '#dbd9d9',
+    backgroundColor: '#FFFFFF',
   },
   inputContainer:{
     borderBottomWidth:1,
@@ -322,4 +253,4 @@ const styles = StyleSheet.create({
   }
 });
 
-module.exports = UserProfile;
+module.exports = FollowersShareTo;

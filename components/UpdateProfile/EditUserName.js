@@ -16,7 +16,7 @@ let Screen = require('Dimensions').get('window'),
     //back_icon = require('image!back_icon');
     //NavigationBar = require('react-native-navbar');
 
-class EditEmail extends Component {
+class EditUserName extends Component {
   constructor(props){
     super(props);
     this.state={
@@ -59,7 +59,7 @@ class EditEmail extends Component {
               </View>}
             rightButton={
               <View style={{flexDirection:'row', padding: 10}}>
-                <TouchableOpacity style={{justifyContent:'center'}} onPress={()=>this.props.navigator.push({component:require('./AddContact')})}>
+                <TouchableOpacity style={{justifyContent:'center'}} onPress={()=>this.props.navigator.push({component:require('./../AddContact')})}>
                   <Text style={{fontWeight:'700',fontFamily:'din round pro',fontSize:16, color: '#5a0fb4'}}>DONE</Text>
                 </TouchableOpacity>
               </View>
@@ -112,4 +112,4 @@ const styles = StyleSheet.create({
   }
 });
 
-module.exports = EditEmail;
+module.exports = EditUserName;

@@ -52,7 +52,7 @@ class EnterPhoneNumber extends Component {
         <NavigationBar
             leftButton= {
               <TouchableOpacity  onPress={() => context.props.navigator.pop()}>
-                <Image source={{uri :'back_icon'}} style={{top:12,left:6}}/>
+                <Image source={{uri: 'back'}} style={{height:20,width:20,right:10,resizeMode:"contain", left: 6}}/>
               </TouchableOpacity>}
             style = {{backgroundColor:'#5a0fb4'}} />
         <View style={styles.container}>

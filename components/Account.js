@@ -153,7 +153,7 @@ class Account extends Component {
           title={<Text style={{fontWeight:'700',fontFamily:'din round pro',fontSize:16}}>ACCOUNT</Text>}
           leftButton= {
             <TouchableOpacity style={{justifyContent:'center'}} onPress={()=>this.props.navigator.pop()}>
-              <Image source={{uri: 'back_icon'}} style={{}}/>
+              <Image source={{uri: 'back'}} style={{height:20,width:20,right:10,resizeMode:"contain", left: 6}}/>
             </TouchableOpacity>}
           style = {{borderBottomWidth:1, borderBottomColor:'rgba(0,0,0,.1)'}} />
         <ScrollView  showsHorizontalScrollIndicator={false} showsVerticalScrollIndicator={false}>
@@ -163,7 +163,7 @@ class Account extends Component {
                 <Text style={{fontFamily:'din round pro', color: '#a5a0a0', fontSize: 15}}>My Account</Text>         
             </View>
 
-             <TouchableOpacity onPress={()=>this.props.navigator.push({component:require('./EditName')})} style={styles.options}>
+             <TouchableOpacity onPress={()=>this.props.navigator.push({component:require('./UpdateProfile/EditName')})} style={styles.options}>
               <View style={{flexDirection:'row', flex:1}}>
                 <View style={{flex:0.5}}>
                    <Text style={{fontWeight:'700',fontFamily:'din round pro'}}>Name</Text>         
@@ -181,7 +181,7 @@ class Account extends Component {
 
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={()=>this.props.navigator.push({component:require('./EditUserName')})} style={styles.options}>
+            <TouchableOpacity onPress={()=>this.props.navigator.push({component:require('./UpdateProfile/EditUserName')})} style={styles.options}>
               <View style={{flexDirection:'row', flex:1}}>
                 <View style={{flex:0.5}}>
                    <Text style={{fontWeight:'700',fontFamily:'din round pro'}}>Username</Text>         
@@ -217,7 +217,7 @@ class Account extends Component {
 
             </TouchableOpacity>
 
-             <TouchableOpacity onPress={()=>this.props.navigator.push({component:require('./EditEmail')})} style={styles.options}>
+             <TouchableOpacity onPress={()=>this.props.navigator.push({component:require('./UpdateProfile/EditEmail')})} style={styles.options}>
               <View style={{flexDirection:'row', flex:1}}>
                 <View style={{flex:0.5}}>
                    <Text style={{fontWeight:'700',fontFamily:'din round pro'}}>Email</Text>         
@@ -235,7 +235,7 @@ class Account extends Component {
 
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={()=>this.props.navigator.push({component:require('./EditPassword')})} style={styles.options}>
+            <TouchableOpacity onPress={()=>this.props.navigator.push({component:require('./UpdateProfile/EditPassword')})} style={styles.options}>
               <View style={{flexDirection:'row', flex:1}}>
                 <View style={{flex:0.5}}>
                    <Text style={{fontWeight:'700',fontFamily:'din round pro'}}>Password</Text>         

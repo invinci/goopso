@@ -82,7 +82,7 @@ class Notifications extends Component {
           title={<Text style={{fontWeight:'700',fontFamily:'din round pro',fontSize:16}}>NOTIFICATIONS</Text>}
           leftButton= {
             <TouchableOpacity style={{justifyContent:'center'}} onPress={()=>this.props.navigator.pop()}>
-              <Image source={{uri :'back'}} style={{}}/>
+              <Image source={{uri: 'back'}} style={{height:20,width:20,right:10,resizeMode:"contain", left: 6}}/>
             </TouchableOpacity>}
           style = {{borderBottomWidth:1, borderBottomColor:'rgba(0,0,0,.1)'}} />
         <ScrollView  showsHorizontalScrollIndicator={false} showsVerticalScrollIndicator={false}>

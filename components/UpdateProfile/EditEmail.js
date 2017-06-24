@@ -59,7 +59,7 @@ class EditEmail extends Component {
               </View>}
             rightButton={
               <View style={{flexDirection:'row', padding: 10}}>
-                <TouchableOpacity style={{justifyContent:'center'}} onPress={()=>this.props.navigator.push({component:require('./AddContact')})}>
+                <TouchableOpacity style={{justifyContent:'center'}} onPress={()=>this.props.navigator.push({component:require('./../AddContact')})}>
                   <Text style={{fontWeight:'700',fontFamily:'din round pro',fontSize:16, color: '#5a0fb4'}}>DONE</Text>
                 </TouchableOpacity>
               </View>

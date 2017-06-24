@@ -212,7 +212,7 @@ class Chat extends Component {
           }
           leftButton= {
             <TouchableOpacity style={{justifyContent:'center'}} onPress={()=>this.props.navigator.pop()}>
-              <Image source={{ uri: 'back'}} style={{}}/>
+              <Image source={{uri: 'back'}} style={{height:20,width:20,right:10,resizeMode:"contain", left: 6}}/>
             </TouchableOpacity>}
           style = {{borderBottomWidth:1, borderBottomColor:'rgba(0,0,0,.1)',padding:20}} />
       <GiftedChat

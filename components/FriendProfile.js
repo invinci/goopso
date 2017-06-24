@@ -34,7 +34,7 @@ class FriendProfile extends Component {
         <NavigationBar
           leftButton= {
             <TouchableOpacity onPress={()=>this.props.navigator.pop()}>
-              <Image source={{ uri :'back_icon'}} style={{top:20,left:6}}/>
+              <Image source={{uri: 'back'}} style={{height:20,width:20,right:10,resizeMode:"contain", left: 6}}/>
             </TouchableOpacity>}
           style = {{borderBottomWidth:1, borderBottomColor:'rgba(0,0,0,.1)', height:(Screen.height/100)*10}} />
         <View style={styles.container}>
